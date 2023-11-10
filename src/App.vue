@@ -1,5 +1,5 @@
 <script>
-import { store } from '../store';
+import { store } from './store';
 import Header from './components/Header.vue';
 import Main from './components/Main.vue';
 import axios from 'axios';

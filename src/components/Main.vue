@@ -1,6 +1,6 @@
 <script>
 import FilmCard from './FilmCard.vue';
-import { store } from '/store';
+import { store } from '../store';
 
 export default {
     components: {
