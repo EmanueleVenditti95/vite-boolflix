@@ -13,16 +13,17 @@ export default {
             store
         }
     },
-    created() {
-        console.log(this.store)
+    mounted() {
     }
 }
 </script>
 
 <template>
-    <div v-for="card,i in this.store.films" :key="i">
-        <FilmCard :item="card"/>
+    <div v-for="film in this.store.films" :key="film.id">
+        <FilmCard :item="film"/>
     </div>
+
+    <h1>{{ this.store.warnMessage }}</h1>
 </template>
 
 <style>

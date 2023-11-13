@@ -1,18 +1,33 @@
 <script>
+import { store } from "../store"
+
 export default {
+    store,
     props: {
         item: {
             type : Object
         }
+    },
+    data() {
+        return {
+            store
+        }
+    },
+    mounted(){
     }
 }
 </script>
 
 <template>
-<h1>{{ item.title }}</h1>
-<h2>{{ item.original_title }}</h2>
-<h3>{{ item.original_language }}</h3>
-<h5>{{ item.vote_average }}</h5>
+    <ul>
+        <li>{{ item.title }}</li>
+        <li>{{ item.original_title }}</li>
+        <li v-if="this.store.flags[item.original_language]">
+            <img :src="this.store.flags[item.original_language]" alt="">
+        </li>
+        <li v-else>{{ item.original_language }}</li>
+        <li>{{ item.vote_average }}</li>
+    </ul>
 </template>
 
 <style>
