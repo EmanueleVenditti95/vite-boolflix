@@ -12,5 +12,6 @@ export const store = reactive({
         en : "https://flagsapi.com/GB/flat/64.png"
     },
     warnMessageFilm : '',
-    warnMessageSeries : ''
+    warnMessageSeries : '',
+    postersUrl : 'https://image.tmdb.org/t/p/w92'
 });

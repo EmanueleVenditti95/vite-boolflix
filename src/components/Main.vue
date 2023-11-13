@@ -28,7 +28,7 @@ export default {
             <FilmCard :item="film"/>
         </div>
 
-        <h1>{{ this.store.warnMessageFilm }}</h1>
+        <p>{{ this.store.warnMessageFilm }}</p>
     </section>
 
     <section>
@@ -37,7 +37,7 @@ export default {
             <SeriesCard :item="serie"/>
         </div>
 
-        <h1>{{ this.store.warnMessageSeries }}</h1>
+        <p>{{ this.store.warnMessageSeries }}</p>
     </section>
     
 </template>

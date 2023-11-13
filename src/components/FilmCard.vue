@@ -20,6 +20,7 @@ export default {
 
 <template>
     <ul>
+        <li><img :src="this.store.postersUrl + item.poster_path" alt=""></li>
         <li>{{ item.title }}</li>
         <li>{{ item.original_title }}</li>
         <li v-if="this.store.flags[item.original_language]">
