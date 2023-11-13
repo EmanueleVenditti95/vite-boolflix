@@ -13,5 +13,5 @@ export const store = reactive({
     },
     warnMessageFilm : '',
     warnMessageSeries : '',
-    postersUrl : 'https://image.tmdb.org/t/p/w92'
+    postersUrl : 'https://image.tmdb.org/t/p/w342'
 });

@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-    <ul>
+    <ul class="card">
         <li><img :src="this.store.postersUrl + item.poster_path" alt=""></li>
         <li>{{ item.title }}</li>
         <li>{{ item.original_title }}</li>

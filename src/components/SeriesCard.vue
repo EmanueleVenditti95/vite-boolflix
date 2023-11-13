@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-    <ul>
+    <ul class="card">
         <li><img :src="this.store.postersUrl + item.poster_path" alt=""></li>
         <li>{{ item.name }}</li>
         <li>{{ item.original_name }}</li>
@@ -41,5 +41,6 @@ export default {
     </ul>
 </template>
 
-<style>
+<style lang="scss" scoped>
+@use "../style/general.scss"
 </style>
