@@ -30,18 +30,16 @@ export default {
                     <FilmCard :item="film"/>
                 </div>
             </div>
-
-
             <p>{{ this.store.warnMessageFilm }}</p>
         </section>
 
         <section>
             <h1>Series :</h1>
-            <div
-            v-for="serie in this.store.series" :key="serie.id">
+            <div class="container-flex">
+                <div v-for="serie in this.store.series" :key="serie.id">
                 <SeriesCard :item="serie"/>
+                </div>
             </div>
-
             <p>{{ this.store.warnMessageSeries }}</p>
         </section>
     </main>    
