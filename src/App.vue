@@ -19,11 +19,14 @@ export default {
   },
   methods: {
     search() {
+      this.store.warnMessageSeries = '';
+      this.store.warnMessageFilm = '';
+      
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&query=${this.store.query}&language=${this.language}`)
       .then(res => {
         this.store.films = res.data.results;
         if (!this.store.films.length) {
-        this.store.warnMessageFilm = 'Nessun elemento trovato'
+        this.store.warnMessageFilm = 'Nessun elemento trovato';
       }
       this.store.query = '';
       })
@@ -32,13 +35,10 @@ export default {
       .then(res => {
         this.store.series = res.data.results;
         if (!this.store.series.length) {
-        this.store.warnMessageSeries = 'Nessun elemento trovato'
+        this.store.warnMessageSeries = 'Nessun elemento trovato';
       }
       })
     },
-  },
-  created() {
-    console.log(this.store.query)
   }
 }
 </script>
@@ -48,6 +48,6 @@ export default {
 <Main />
 </template>
 
-<style scoped>
-
+<style lang="scss">
+@use '../src/style/general.scss'
 </style>
