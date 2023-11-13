@@ -18,16 +18,24 @@ export default {
     }
   },
   methods: {
-    searchFilm() {
+    search() {
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&query=${this.store.query}&language=${this.language}`)
       .then(res => {
         this.store.films = res.data.results;
-        console.log(this.store.films);
         if (!this.store.films.length) {
-          this.store.warnMessage = 'Nessun film trovato'
-        }
+        this.store.warnMessageFilm = 'Nessun elemento trovato'
+      }
+      this.store.query = '';
       })
-    }
+
+      axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${this.API_KEY}&query=${this.store.query}&language=${this.language}`)
+      .then(res => {
+        this.store.series = res.data.results;
+        if (!this.store.series.length) {
+        this.store.warnMessageSeries = 'Nessun elemento trovato'
+      }
+      })
+    },
   },
   created() {
     console.log(this.store.query)
@@ -36,7 +44,7 @@ export default {
 </script>
 
 <template>
-<Header @search="searchFilm" />
+<Header @search="search" />
 <Main />
 </template>
 

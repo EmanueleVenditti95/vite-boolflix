@@ -15,7 +15,7 @@ export default {
 
 <template>
 <button @click="$emit('search')">Cerca</button>
-<input type="text" v-model="store.query" >
+<input type="text" v-model="store.query" @keyup.enter="$emit('search')" placeholder="Cerca...">
 </template>
 
 <style>
