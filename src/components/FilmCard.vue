@@ -14,6 +14,11 @@ export default {
         }
     },
     mounted(){
+    },
+    computed : {
+        rating() {
+            return Math.ceil((this.item.vote_average) / 2);
+        }
     }
 }
 </script>
@@ -27,9 +32,27 @@ export default {
             <img :src="this.store.flags[item.original_language]" alt="">
         </li>
         <li v-else>{{ item.original_language }}</li>
-        <li>{{ item.vote_average }}</li>
+        <li class="rating">
+            <div v-for="(star,i) in 5">
+                <i class="fa-solid fa-star"
+                :class="i <= (rating - 1) ? 'star' : 'empty-star'"></i>
+            </div>
+        </li>
     </ul>
 </template>
 
-<style>
+<style lang="scss" scoped>
+.rating{
+    display: flex;
+    .star {
+        color: yellow;
+        background-color: rgb(181, 178, 178);
+        border: 1px solid rgb(76, 74, 74);
+    }
+    .empty-star {
+        color: white;
+        background-color: rgb(181, 178, 178);
+        border: 1px solid rgb(76, 74, 74);
+    }
+}
 </style>

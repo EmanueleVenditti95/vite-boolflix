@@ -14,6 +14,11 @@ export default {
         }
     },
     mounted(){
+    },
+    computed : {
+        rating() {
+            return Math.ceil((this.item.vote_average) / 2);
+        }
     }
 }
 </script>
@@ -27,7 +32,7 @@ export default {
             <img :src="this.store.flags[item.original_language]" alt="">
         </li>
         <li v-else>{{ item.original_language }}</li>
-        <li>{{ item.vote_average }}</li>
+        <li>{{ rating }}</li>
     </ul>
 </template>
 
