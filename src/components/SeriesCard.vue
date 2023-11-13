@@ -32,7 +32,12 @@ export default {
             <img :src="this.store.flags[item.original_language]" alt="">
         </li>
         <li v-else>{{ item.original_language }}</li>
-        <li>{{ rating }}</li>
+        <li class="rating">
+            <div v-for="(star,i) in 5">
+                <i class="fa-solid fa-star"
+                :class="i <= (rating - 1) ? 'star' : 'empty-star'"></i> 
+            </div>
+        </li>
     </ul>
 </template>
 

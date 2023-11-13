@@ -35,13 +35,13 @@ export default {
         <li class="rating">
             <div v-for="(star,i) in 5">
                 <i class="fa-solid fa-star"
-                :class="i <= (rating - 1) ? 'star' : 'empty-star'"></i>
+                :class="i <= (rating - 1) ? 'star' : 'empty-star'"></i> 
             </div>
         </li>
     </ul>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .rating{
     display: flex;
     .star {
