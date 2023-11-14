@@ -53,7 +53,9 @@ export default {
             </div>
         </li>
     </ul>
-    <img @mouseover="mouseOver" class="card__img" :src="this.store.postersUrl + item.poster_path" alt="">
+    <h1 v-if="!item.poster_path" @mouseover="mouseOver" class="warning"> Nessuna immagine disponibile</h1>
+    <img v-else @mouseover="mouseOver" class="card__img" :src="this.store.postersUrl + item.poster_path" alt="">
+
 </template>
 
 <style lang="scss">
@@ -105,4 +107,16 @@ export default {
         }
     }
 }
+
+.warning {
+    background-color: white;
+    color: black;
+    width: 100%;
+    aspect-ratio: 6 / 9;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
 </style>
