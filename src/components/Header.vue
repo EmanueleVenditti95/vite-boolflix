@@ -14,20 +14,23 @@ export default {
 </script>
 
 <template>
-  <nav class="container">
-    <h1 class="logo">BOOLFLIX</h1>
-    <input class="searchbar" type="text" v-model="store.query" @keyup.enter="$emit('search')" placeholder="Cerca...">
-  </nav>
+  <div class="bg-black">
+    <nav class="container">
+      <h1 class="logo">BOOLFLIX</h1>
+      <input class="searchbar" type="text" v-model="store.query" @keyup.enter="$emit('search')" placeholder="Cerca...">
+    </nav>
+  </div>
 </template>
 
 <style scoped lang="scss">
 .container {
-  background-color: rgb(36, 33, 33);
   display: flex;
   justify-content: space-between;
   padding: 20px;
   align-items: center;
   height: 10vh;
+  max-width: 1200px;
+  margin: 0 auto;
 
   .logo {
     color: red;
