@@ -34,8 +34,8 @@ export default {
         <li v-else>{{ item.original_language }}</li>
         <li class="rating">
             <div v-for="(star,i) in 5">
-                <i class="fa-solid fa-star"
-                :class="i <= (rating - 1) ? 'star' : 'empty-star'"></i> 
+                <font-awesome-icon icon="fa-solid fa-star" 
+                :class="i <= (rating - 1) ? 'star' : 'empty-star'"/>
             </div>
         </li>
     </ul>
@@ -46,13 +46,9 @@ export default {
     display: flex;
     .star {
         color: yellow;
-        background-color: rgb(181, 178, 178);
-        border: 1px solid rgb(76, 74, 74);
     }
     .empty-star {
         color: white;
-        background-color: rgb(181, 178, 178);
-        border: 1px solid rgb(76, 74, 74);
     }
 }
 </style>
