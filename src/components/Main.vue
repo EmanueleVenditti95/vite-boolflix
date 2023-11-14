@@ -27,8 +27,8 @@ export default {
                  v-for="film in this.store.films" :key="film.id">
                     <Card :item="film"/>
                 </div>
+                <p class="no-element">{{ this.store.warnMessageFilm }}</p>
             </div>
-            <p>{{ this.store.warnMessageFilm }}</p>
         </section>
 
         <section>
@@ -38,8 +38,8 @@ export default {
                  v-for="serie in this.store.series" :key="serie.id">
                     <Card :item="serie"/>
                 </div>
+                <p class="no-element">{{ this.store.warnMessageSeries }}</p>
             </div>
-            <p>{{ this.store.warnMessageSeries }}</p>
         </section>
     </main>    
 </template>
@@ -65,7 +65,11 @@ export default {
         position: relative;
         aspect-ratio: 6 / 9;
         padding: 20px;
-}
+        }
+    }
+    .no-element {
+        margin: 20px;
+        font-size: 18px;
     }
 }
 </style>
