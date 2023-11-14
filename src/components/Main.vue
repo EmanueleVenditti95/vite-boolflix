@@ -1,18 +1,15 @@
 <script>
-import FilmCard from './FilmCard.vue';
-import SeriesCard from './SeriesCard.vue';
+import Card from './Card.vue';
 import { store } from '../store';
 
 export default {
     components: {
-        FilmCard,
-        SeriesCard,
+        Card,
         store
     },
     data(){
         return {
-            FilmCard,
-            SeriesCard,
+            Card,
             store
         }
     },
@@ -27,7 +24,7 @@ export default {
             <h1>Movies :</h1>
             <div class="container-flex">
                 <div v-for="film in this.store.films" :key="film.id">
-                    <FilmCard :item="film"/>
+                    <Card :item="film"/>
                 </div>
             </div>
             <p>{{ this.store.warnMessageFilm }}</p>
@@ -37,7 +34,7 @@ export default {
             <h1>Series :</h1>
             <div class="container-flex">
                 <div v-for="serie in this.store.series" :key="serie.id">
-                <SeriesCard :item="serie"/>
+                    <Card :item="serie"/>
                 </div>
             </div>
             <p>{{ this.store.warnMessageSeries }}</p>
