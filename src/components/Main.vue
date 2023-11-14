@@ -23,7 +23,8 @@ export default {
         <section>
             <h1>Movies :</h1>
             <div class="container-flex">
-                <div v-for="film in this.store.films" :key="film.id">
+                <div class="card"
+                 v-for="film in this.store.films" :key="film.id">
                     <Card :item="film"/>
                 </div>
             </div>
@@ -33,7 +34,7 @@ export default {
         <section>
             <h1>Series :</h1>
             <div class="container-flex">
-                <div v-for="serie in this.store.series" :key="serie.id">
+                <div class="card" v-for="serie in this.store.series" :key="serie.id">
                     <Card :item="serie"/>
                 </div>
             </div>

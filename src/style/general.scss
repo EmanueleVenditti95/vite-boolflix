@@ -10,4 +10,6 @@ li,ul,ol {
 
 .card {
     padding: 20px;
+    flex-basis: calc(100% / 4);
+    color: white;
 }
