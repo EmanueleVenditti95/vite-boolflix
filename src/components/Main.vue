@@ -34,7 +34,8 @@ export default {
         <section>
             <h1>Series :</h1>
             <div class="container-flex">
-                <div class="card" v-for="serie in this.store.series" :key="serie.id">
+                <div class="card"
+                 v-for="serie in this.store.series" :key="serie.id">
                     <Card :item="serie"/>
                 </div>
             </div>
@@ -56,7 +57,15 @@ export default {
     .container-flex {
         display: flex;
         flex-wrap: wrap;
+        max-width: 1200px;
+        margin: 0 auto;
+        .card {
+        flex-basis: calc(100% / 3);
+        color: white;
+        position: relative;
+        aspect-ratio: 6 / 9;
         padding: 20px;
+}
     }
 }
 </style>
