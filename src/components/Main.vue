@@ -57,14 +57,14 @@ export default {
     .container-flex {
         display: flex;
         flex-wrap: wrap;
-        max-width: 1200px;
+        max-width: 1600px;
         margin: 0 auto;
         .card {
-        flex-basis: calc(100% / 3);
+        flex-basis: calc(100% / 6);
         color: white;
         position: relative;
         aspect-ratio: 6 / 9;
-        padding: 20px;
+        padding: 5px;
         }
     }
     .no-element {

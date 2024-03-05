@@ -29,7 +29,7 @@ export default {
   padding: 20px;
   align-items: center;
   height: 10vh;
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
 
   .logo {

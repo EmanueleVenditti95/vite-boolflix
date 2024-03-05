@@ -33,7 +33,7 @@ export default {
 </script>
 
 <template>
-    <ul v-show="this.active" @mouseout="mouseLeave" class="card__list">
+    <ul class="card__list">
         <li><span class="title">Titolo :</span> {{ item.title ?? item.name }}</li>
 
         <li><span class="title">Titolo originale :</span> {{ item.original_title ?? item.original_name }}</li>
@@ -80,16 +80,23 @@ export default {
 }
 
 .card__list {
+    opacity: 0;
+    transition: opacity 0.3s linear;
     background-color: rgb(0, 0, 0, 0.7);
     position: absolute;
-    right: 20px;
-    left: 20px;
-    bottom: 40px;
-    top: 20px;
-    padding: 20px;
+    inset: 0;
+    margin: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+
+    &:hover {
+        opacity: 1;
+        transition: opacity 0.3s linear;
+    }
 
     li {
-        line-height: 40px;
+        margin: 20px 0;
+        font-size: 18px;
     }
 
     .title {
